@@ -107,7 +107,7 @@ const Sidebar = () => {
             className="flex my-3 ml-3 text-center  dark:text-red-500"
           >
             {item.icons}
-            <p className={`ml-3 ${open ? "" : "hidden ml-0"} dark:text-white`}>
+            <p className={`ml-2 ${open ? "" : "hidden ml-0"} dark:text-white`}>
               {item.title}
             </p>
           </div>
