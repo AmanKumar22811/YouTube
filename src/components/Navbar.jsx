@@ -11,7 +11,6 @@ import {
   toggleSidebar,
 } from "../utils/appSlice";
 import axios from "axios";
-import { SEARCH_SUGGESTIONS_API } from "../constants/youtube";
 
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -42,7 +41,9 @@ const Navbar = () => {
   };
   const showSuggestion = async () => {
     try {
-      const res = await axios.get(SEARCH_SUGGESTIONS_API + input);
+      const res = await axios.get(
+        import.meta.env.VITE_SEARCH_SUGGESTIONS_API + input
+      );
 
       dispatch(setSearchSuggestion(res?.data[1]));
     } catch (error) {

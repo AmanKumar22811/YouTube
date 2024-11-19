@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { API_KEY } from "../constants/youtube";
 import axios from "axios";
 import Avatar from "react-avatar";
 import { AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
@@ -21,7 +20,9 @@ const Watch = () => {
   const getSingleVideo = async () => {
     try {
       const res = await axios.get(
-        `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`
+        `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${
+          import.meta.env.VITE_API_KEY
+        }`
       );
       setSingleVideo(res?.data?.items[0]);
     } catch (error) {

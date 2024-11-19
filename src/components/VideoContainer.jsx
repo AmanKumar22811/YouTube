@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import { API_KEY, YOUTUBE_VIDEO_API } from "../constants/youtube";
 import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,7 +10,7 @@ const VideoContainer = () => {
   const dispatch = useDispatch();
   const fetchingYoutubeVideo = async () => {
     try {
-      const res = await axios.get(`${YOUTUBE_VIDEO_API}`);
+      const res = await axios.get(import.meta.env.VITE_YOUTUBE_VIDEO_API);
       dispatch(setHomeVideo(res?.data?.items));
     } catch (error) {
       console.log(error);
@@ -21,7 +20,7 @@ const VideoContainer = () => {
   const fetchVideoByCategory = async (category) => {
     try {
       const res = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${category}&type=video&key=${API_KEY}`
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${category}&type=video&key=${import.meta.env.VITE_API_KEY}`
       );
       dispatch(setHomeVideo(res?.data?.items));
     } catch (error) {
@@ -39,7 +38,7 @@ const VideoContainer = () => {
 
   return (
     <div className="grid grid-cols-3 my-2">
-      {video.map((item) => {
+      {video?.map((item) => {
         return (
           <Link
             to={`/watch?v=${

@@ -2,14 +2,15 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Avatar from "react-avatar";
 import axios from "axios";
-import { API_KEY } from "../constants/youtube";
 
 const VideoCard = ({ item }) => {
   const [ytIcon, setYtIcon] = useState("");
   const getYoutubeChannelName = async () => {
     try {
       const res = await axios.get(
-        `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${item.snippet.channelId}&key=${API_KEY}`
+        `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${
+          item.snippet.channelId
+        }&key=${import.meta.env.VITE_API_KEY}`
       );
       setYtIcon(res.data.items[0].snippet.thumbnails.high.url);
     } catch (error) {
