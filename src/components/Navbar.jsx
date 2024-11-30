@@ -11,6 +11,8 @@ import {
   toggleSidebar,
 } from "../utils/appSlice";
 import axios from "axios";
+import Chatbot from "./Chatbot";
+import { TbBrandYoutubeKids } from "react-icons/tb";
 
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -18,10 +20,6 @@ const Navbar = () => {
   const handleDarkModeToggle = () => {
     setIsDarkMode(!isDarkMode);
   };
-
-  const logoSrc = isDarkMode
-    ? " https://news-cdn.softpedia.com/images/news2/youtube-is-finally-getting-a-dark-mode-rolling-out-soon-to-ios-and-android-520209-2.jpg"
-    : "https://es.logodownload.org/wp-content/uploads/2018/09/youtube-logo-81-1024x228.png";
 
   const [input, setInput] = useState("");
   const [suggestion, setSuggestion] = useState(false);
@@ -65,14 +63,23 @@ const Navbar = () => {
   return (
     <div className="flex fixed top-0 justify-center items-center w-[100%] z-10 bg-white dark:bg-black  dark:text-white ">
       <div className="flex w-[96%] py-3 justify-between items-center">
-        <div className="flex items-center">
+        <div className="flex items-center justify-center ">
           <GiHamburgerMenu
             className="size-[25px] hover:cursor-pointer"
             onClick={toggleHandler}
           />
-          <img className="w-[115px] px-4 " src={logoSrc} alt="YouTube Logo" />
+
+          <div className="px-4 flex items-center gap-2 dark:text-red-600">
+            <TbBrandYoutubeKids className="text-4xl "/> 
+            <span className="text-2xl">VidHive</span>
+          </div>
+
           <div>
             <DarkMode onToggle={handleDarkModeToggle} />
+          </div>
+
+          <div>
+            <Chatbot />
           </div>
         </div>
         <div className="flex w-[40%] items-center">

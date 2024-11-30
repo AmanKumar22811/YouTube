@@ -68,7 +68,7 @@ const subscriber = [
     name: "Vegeta",
   },
   {
-    src: "https://www.hdwallpaper.nu/wp-content/uploads/2015/12/Naruto_Shippuden_17.jpg",
+    src: "https://cdn.staticneo.com/w/naruto/Nprofile2.jpg",
     name: "Naruto",
   },
   {

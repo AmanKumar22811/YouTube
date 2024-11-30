@@ -18,7 +18,7 @@ const DarkMode = ({ onToggle }) => {
 
   const handleToggle = () => {
     setTheme(theme === "light" ? "dark" : "light");
-    onToggle(); // Call the onToggle function from props
+    onToggle();
   };
 
   return (

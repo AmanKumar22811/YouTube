@@ -103,6 +103,7 @@ const Watch = () => {
               <input
                 className="border-b border-gray-600 outline-none rounded-xl"
                 type="text"
+                value={input}
                 placeholder="Send Message..."
                 onChange={(e) => setInput(e.target.value)}
               />

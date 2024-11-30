@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import Body from "./components/Body";
 import Watch from "./components/Watch";
 import Feed from "./components/Feed";
-import Chatbot from "./components/Chatbot";
 
 const appRouter = createBrowserRouter([
   {
@@ -27,7 +26,6 @@ function App() {
     <div className="dark:bg-black">
       <Navbar />
       <RouterProvider router={appRouter} />
-      <Chatbot />
     </div>
   );
 }
