@@ -69,8 +69,8 @@ const Navbar = () => {
             onClick={toggleHandler}
           />
 
-          <div className="px-4 flex items-center gap-2 dark:text-red-600">
-            <TbBrandYoutubeKids className="text-4xl "/> 
+          <div className="px-4 flex items-center gap-2 ">
+            <TbBrandYoutubeKids className="text-4xl text-red-600" />
             <span className="text-2xl">VidHive</span>
           </div>
 

@@ -33,7 +33,7 @@ const Watch = () => {
     getSingleVideo();
   }, []);
   const sendMessage = () => {
-    dispatch(setMessage({ name: "Patel", message: input }));
+    dispatch(setMessage({ name: "You", message: input }));
     setInput("");
   };
   return (
